@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body,
+  html {
+    height: 100%;
+    margin: 0;
+  }
+
+  .birthdayimg {
+    background-image: url('https://cdn.pixabay.com/photo/2018/02/23/21/29/roses-frame-3176667_960_720.jpg');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: rgba(255, 0, 0, 0.335);
+    font-size: 35px;
+  }
+
+  .topleft {
+    position: absolute;
+    
+    top: 0;
+    left: 12px;
+  }
+
+  .bottomleft {
+    position: absolute;
+    color: rgba(155, 67, 16, 0.899);
+    bottom: 0;
+    left: 18px;
+  }
+
+  .middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-style: bold;
+    font-weight: 100px;
+  }
+
+  hr {
+    margin: auto;
+    width: 40%;
+  }
+</style>
+
+<body>
+  <div class="birthdayimg">
+    <div class="topleft">
+    </div>
+    <div class="middle">
+      <h1>Ready for the Surprise ?</h1>
+      <hr>
+      <p id="amx" style="font-size:50px"></p>
+    </div>
+    <div class="bottomleft">
+      <p>Created by SP</p>
+    </div>
+  </div>
+
+  <script>
+    var countDownDate = new Date().getTime();
+
+    var countdownfunction = setInterval(function () {
+
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("amx").innerHTML = days + "D " + hours + "H "
+        + minutes + "M " + seconds + "S ";
+
+      if (distance < 0) {
+        clearInterval(countdownfunction);
+        document.getElementById("amx").innerHTML = "HAPPY BIRTHDAY Gorgeous !!🎂🥳🥳🍾🍷🍾🍻";
+        window.location = "https://www.youtube.com/watch?v=7qf2H4O0LcE";
+      }
+
+    }, 1000);
+  </script>
+
+</body>
+
+</html>
